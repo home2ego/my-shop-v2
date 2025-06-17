@@ -1,10 +1,14 @@
 import { useState, type FC, useRef, useLayoutEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { apiMutate } from '../api/fetcher';
+import { ApiMethod, apiMutate } from '../api/fetcher';
 import type User from '../types/User';
 import type LoginData from '../types/LoginData';
 import './Login.scss';
+
+interface LoginError {
+  message: string;
+}
 
 interface Props {
   onUserLogin: (user: User) => void;
@@ -12,6 +16,7 @@ interface Props {
 
 const Login: FC<Props> = ({ onUserLogin }) => {
   const [errorMessage, setErrorMessage] = useState('');
+  const [hasError, setHasError] = useState(false);
   const navigate = useNavigate();
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
@@ -21,16 +26,23 @@ const Login: FC<Props> = ({ onUserLogin }) => {
 
   const mutation = useMutation({
     mutationFn: (data: LoginData) => {
-      return apiMutate<User[], LoginData>('POST', 'rpc/login', data);
+      return apiMutate<User[], LoginData>(ApiMethod.POST, 'rpc/login', data);
     },
 
-    onError: (error) => {
-      setErrorMessage(error.message);
+    onError: () => {
+      setErrorMessage(
+        'Login failed. Please check your network connection and try again.',
+      );
     },
 
-    onSuccess: (data: User[]) => {
-      onUserLogin(data[0]);
-      navigate('/profile', { replace: true });
+    onSuccess: (data: User[] | LoginError) => {
+      if ('message' in data) {
+        setErrorMessage(data.message);
+        setHasError(true);
+      } else {
+        onUserLogin(data[0]);
+        navigate('/profile', { replace: true });
+      }
     },
   });
 
@@ -62,7 +74,7 @@ const Login: FC<Props> = ({ onUserLogin }) => {
             type="email"
             id="emailId"
             name="email"
-            className="input"
+            className={hasError ? 'input input-error' : 'input'}
             placeholder="Email"
             autoComplete="email"
             disabled={mutation.isPending}

@@ -21,13 +21,13 @@ body {
 
   background-image: linear-gradient(to bottom, #f8f9fa, #e2e6ec);
   color: var(--black);
-  
+
   min-height: 100vh;
 }
 body.dark {
   --attention: #ff4652;
   --highlight: #161a1d;
-  
+
   background-image: linear-gradient(to bottom, #020917, #101725);
   color: var(--light);
 }
@@ -165,6 +165,10 @@ button {
 
   width: 100%;
   margin-bottom: 16px;
+
+  &.input-error {
+    border-color: var(--attention);
+  }
 
   &:disabled {
     background-color: var(--heighleight);

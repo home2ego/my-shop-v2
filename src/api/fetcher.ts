@@ -1,4 +1,10 @@
-type MutationMethod = 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+export enum ApiMethod {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  DELETE = 'DELETE',
+}
 
 const API_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJud2R4ZHVqZ3pyemd0Zmt5c215Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyMjUxMDIsImV4cCI6MjA0MTgwMTEwMn0.D0nuB2PYrkIVuIsz3R2JqJLJYHmr8gXChAiZrTGMiHk';
@@ -14,7 +20,7 @@ export function apiGet<T>(endpoint: string): Promise<T> {
 }
 
 export function apiMutate<T, D>(
-  method: MutationMethod,
+  method: ApiMethod,
   endpoint: string,
   data: D,
 ): Promise<T> {

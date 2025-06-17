@@ -18,8 +18,6 @@ const App = () => {
   const [user, setUser] = useState<User | null>(null);
   const location = useLocation();
 
-  console.log(location.pathname);
-
   function handleUserLogin(newUser: User) {
     setUser(newUser);
   }
