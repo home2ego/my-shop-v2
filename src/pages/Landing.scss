@@ -1,0 +1,28 @@
+.landing {
+  &-tagline {
+    max-width: 30rem;
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: start;
+
+    @media (max-width: 30rem) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    a {
+      margin-top: 24px;
+    }
+
+    img {
+      justify-self: end;
+
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

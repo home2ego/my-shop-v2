@@ -1,0 +1,24 @@
+.product {
+  padding: 16px;
+  transition: background-color 240ms;
+
+  &:hover {
+    border-radius: 4px;
+    background-color: var(--highlight);
+  }
+
+  img {
+    border-radius: 8px;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  &__price {
+    font-size: 0.9rem;
+  }
+}
