@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 import type User from '../types/User';
-import './Profile.scss';
+import './Profile.css';
 
 interface Props {
   user: User | null;

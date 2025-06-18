@@ -1,0 +1,29 @@
+.product {
+  padding: 16px;
+  transition: background-color 240ms;
+}
+.product:hover {
+  border-radius: 4px;
+  background-color: var(--highlight);
+}
+
+.product img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+
+  opacity: 0;
+  transition: opacity 180ms ease-in;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.product a {
+  color: inherit;
+}
+
+.product__price {
+  font-size: 0.9rem;
+}

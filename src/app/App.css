@@ -84,13 +84,12 @@ button {
   padding: 9px;
 
   transition: transform 180ms;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-  &:active {
-    transform: scale(0.95);
-  }
+}
+.theme-switcher:hover {
+  transform: scale(1.05);
+}
+.theme-switcher:active {
+  transform: scale(0.95);
 }
 
 .btn-link {
@@ -106,42 +105,37 @@ button {
   border-radius: 24px;
 
   transition: transform 180ms, opacity 180ms;
+}
+.btn-link:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
-  &__primary {
-    &:hover {
-      transform: scale(1.025);
-      transform: translate(2px, 2px);
-    }
+.btn-link__primary:hover {
+  transform: scale(1.025);
+  transform: translate(2px, 2px);
+}
+.btn-link__primary.active {
+  pointer-events: none;
+  transform: initial;
+  opacity: 0.75;
+}
 
-    &.active {
-      pointer-events: none;
-      transform: initial;
-      opacity: 0.75;
-    }
-  }
+.btn-link__secondary {
+  width: fit-content;
+  font-size: 0.9rem;
+  background-color: #abc4ff;
+  color: var(--black);
+}
+.btn-link__secondary:not(:disabled):hover {
+  transform: scale(1.025);
+  transform: translate(2px, 2px);
+}
 
-  &__secondary {
-    width: fit-content;
-    font-size: 0.9rem;
-    background-color: #abc4ff;
-    color: var(--black);
-
-    &:not(:disabled):hover {
-      transform: scale(1.025);
-      transform: translate(2px, 2px);
-    }
-  }
-
-  &__space {
-    display: inline-block;
-    text-align: center;
-    min-width: 45px;
-  }
-
-  &:disabled {
-    pointer-events: none;
-    opacity: 0.5;
-  }
+.btn-link__space {
+  display: inline-block;
+  text-align: center;
+  min-width: 45px;
 }
 
 .text-dimmed {
@@ -165,12 +159,11 @@ button {
 
   width: 100%;
   margin-bottom: 16px;
+}
+.input:disabled {
+  background-color: var(--heighleight);
+}
 
-  &.input-error {
-    border-color: var(--attention);
-  }
-
-  &:disabled {
-    background-color: var(--heighleight);
-  }
+.input-error {
+  border-color: var(--attention);
 }

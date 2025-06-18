@@ -2,7 +2,7 @@ import { useContext, useLayoutEffect, useState, type FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import type User from '../types/User';
-import './Navbar.scss';
+import './Navbar.css';
 
 interface Props {
   user: User | null;

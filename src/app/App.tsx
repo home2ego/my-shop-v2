@@ -12,7 +12,7 @@ import ProductDetails from '../pages/ProductDetails';
 import Cart from '../pages/Cart';
 
 import type User from '../types/User';
-import './App.scss';
+import './App.css';
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);

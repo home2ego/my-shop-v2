@@ -1,3 +1,5 @@
+import './ErrorFallback.css';
+
 interface Props {
   error: Error;
 }

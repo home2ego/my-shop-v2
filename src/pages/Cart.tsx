@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import formatProductName from '../utils/formatProductName';
 import formatPrice from '../utils/formatPrice';
 import type User from '../types/User';
-import './Cart.scss';
+import './Cart.css';
 
 interface Props {
   user: User | null;

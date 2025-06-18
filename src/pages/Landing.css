@@ -1,0 +1,28 @@
+.landing-tagline {
+  max-width: 30rem;
+}
+
+.landing-wrapper {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  align-items: start;
+}
+
+.landing-wrapper a {
+  margin-top: 24px;
+}
+
+.landing-wrapper img {
+  justify-self: end;
+
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 30rem) {
+  .landing-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

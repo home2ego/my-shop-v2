@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Price from './Price';
 import type ProductType from '../types/ProductType';
-import './Product.scss';
+import './Product.css';
 
 interface Props {
   details: ProductType;

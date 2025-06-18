@@ -3,7 +3,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { apiGet } from '../api/fetcher';
 import Product from '../components/Product';
 import type ProductType from '../types/ProductType';
-import './Products.scss';
+import './Products.css';
 
 const Products = () => {
   const { data: products } = useSuspenseQuery({

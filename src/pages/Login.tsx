@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ApiMethod, apiMutate } from '../api/fetcher';
 import type User from '../types/User';
 import type LoginData from '../types/LoginData';
-import './Login.scss';
+import './Login.css';
 
 interface LoginError {
   message: string;

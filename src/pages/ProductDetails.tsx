@@ -5,7 +5,7 @@ import { CartContext } from '../contexts/CartContext';
 import { apiGet } from '../api/fetcher';
 import Price from '../components/Price';
 import type ProductDetailsType from '../types/ProductDetailsType';
-import './ProductDetails.scss';
+import './ProductDetails.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -31,8 +31,8 @@ const ProductDetails = () => {
           <img
             src={product.thumbnail}
             alt={product.name}
-            width="612"
-            height="408"
+            width="200"
+            height="220"
           />
 
           <table className="nutrition">
