@@ -17,13 +17,13 @@ const Cart: FC<Props> = ({ user }) => {
     useContext(CartContext);
 
   return (
-    <div className="cart-wrapper">
+    <div className="content-wrapper">
       {cart.length === 0 ? (
         <>
           <title>Cart | MyShop</title>
           <h1>Your cart</h1>
 
-          <p>
+          <p className="cart-empty">
             Your cart is empty. Add a product from the{' '}
             <Link to="/products">products</Link> page.
           </p>

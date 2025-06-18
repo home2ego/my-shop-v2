@@ -1,21 +1,19 @@
-import type { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 import type User from '../types/User';
-import './Profile.css';
 
 interface Props {
   user: User | null;
   onUserLogout: () => void;
 }
 
-const Profile: FC<Props> = ({ user, onUserLogout }) => {
+const Profile = ({ user, onUserLogout }: Props) => {
   if (!user) {
     return <Navigate to="/login" replace />;
   }
 
   return (
     <>
-      <div className="profile-wrapper">
+      <div className="content-wrapper">
         <title>Profile | MyShop</title>
         <h1>Profile</h1>
         <p className="text-dimmed">

@@ -1,9 +1,4 @@
-.cart-wrapper {
-  max-width: 25rem;
-  margin-inline: auto;
-  margin-bottom: 24px;
-}
-.cart-wrapper a {
+.cart-empty a {
   color: var(--attention);
   font-weight: 500;
   text-decoration: underline;

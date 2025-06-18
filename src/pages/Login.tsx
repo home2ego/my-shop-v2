@@ -16,7 +16,6 @@ interface Props {
 
 const Login: FC<Props> = ({ onUserLogin }) => {
   const [errorMessage, setErrorMessage] = useState('');
-  const [hasError, setHasError] = useState(false);
   const navigate = useNavigate();
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
@@ -38,7 +37,6 @@ const Login: FC<Props> = ({ onUserLogin }) => {
     onSuccess: (data: User[] | LoginError) => {
       if ('message' in data) {
         setErrorMessage(data.message);
-        setHasError(true);
       } else {
         onUserLogin(data[0]);
         navigate('/profile', { replace: true });
@@ -48,9 +46,11 @@ const Login: FC<Props> = ({ onUserLogin }) => {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setErrorMessage('');
 
     const formData = new FormData(e.currentTarget);
+
     mutation.mutate({
       u_email: formData.get('email') as string,
       u_password: formData.get('password') as string,
@@ -59,7 +59,7 @@ const Login: FC<Props> = ({ onUserLogin }) => {
 
   return (
     <>
-      <div className="login-wrapper">
+      <div className="content-wrapper">
         <title>Login | MyShop</title>
         <h1>Login</h1>
         <p className="text-dimmed">
@@ -74,7 +74,7 @@ const Login: FC<Props> = ({ onUserLogin }) => {
             type="email"
             id="emailId"
             name="email"
-            className={hasError ? 'input input-error' : 'input'}
+            className="input"
             placeholder="Email"
             autoComplete="email"
             disabled={mutation.isPending}

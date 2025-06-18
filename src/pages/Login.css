@@ -1,9 +1,3 @@
-.login-wrapper {
-  max-width: 25rem;
-  margin-inline: auto;
-  margin-bottom: 24px;
-}
-
 .login-error {
   color: var(--attention);
   font-weight: 500;
