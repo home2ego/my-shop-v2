@@ -13,6 +13,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 16px;
+  height: 9rem;
 
   padding: 8px;
   border-radius: 8px;
@@ -25,11 +26,6 @@
 
 .cart img {
   align-self: center;
-
-  max-width: 126px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 .cart__details {

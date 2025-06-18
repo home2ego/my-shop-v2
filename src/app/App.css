@@ -167,3 +167,18 @@ button {
 .input-error {
   border-color: var(--attention);
 }
+
+.avatar {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-fade {
+  opacity: 0;
+}
+
+.image-fade.loaded {
+  transition: opacity 280ms ease-in;
+  opacity: 1;
+}

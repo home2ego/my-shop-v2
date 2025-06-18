@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useImageLoaded } from '../hooks/useImageLoaded';
 import { Link } from 'react-router-dom';
 import Price from './Price';
 import type ProductType from '../types/ProductType';
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Product = ({ details }: Props) => {
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, handleLoad } = useImageLoaded();
   const { id, thumbnail, name, final_price, original_price } = details;
 
   return (
@@ -20,8 +20,8 @@ const Product = ({ details }: Props) => {
           height="220"
           src={thumbnail}
           alt={name}
-          className={loaded ? 'loaded' : ''}
-          onLoad={() => setLoaded(true)}
+          className={loaded ? 'avatar image-fade loaded' : 'avatar image-fade'}
+          onLoad={handleLoad}
         />
         <h2>{name}</h2>
         <div className="product__price">

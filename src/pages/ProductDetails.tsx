@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useImageLoaded } from '../hooks/useImageLoaded';
 import { Link, useParams } from 'react-router-dom';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { CartContext } from '../contexts/CartContext';
@@ -8,6 +9,7 @@ import type ProductDetailsType from '../types/ProductDetailsType';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
+  const { loaded, handleLoad } = useImageLoaded();
   const { id } = useParams();
   const { onAddProduct } = useContext(CartContext);
 
@@ -33,6 +35,10 @@ const ProductDetails = () => {
             alt={product.name}
             width="200"
             height="220"
+            className={
+              loaded ? 'avatar image-fade loaded' : 'avatar image-fade'
+            }
+            onLoad={handleLoad}
           />
 
           <table className="nutrition">

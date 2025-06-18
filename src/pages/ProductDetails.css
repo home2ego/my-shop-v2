@@ -28,11 +28,7 @@
   align-items: center;
   gap: 16px;
 }
-.details img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-}
+
 .details__name {
   margin-top: 0;
   margin-bottom: 8px;

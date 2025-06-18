@@ -7,19 +7,6 @@
   background-color: var(--highlight);
 }
 
-.product img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-
-  opacity: 0;
-  transition: opacity 180ms ease-in;
-}
-
-.product img.loaded {
-  opacity: 1;
-}
-
 .product a {
   color: inherit;
 }
