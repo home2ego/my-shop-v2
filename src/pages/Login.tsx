@@ -3,8 +3,12 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { apiMutate } from '../api/fetcher';
 import type User from '../types/User';
-import type LoginData from '../types/LoginData';
 import './Login.css';
+
+interface LoginData {
+  u_email: string;
+  u_password: string;
+}
 
 interface LoginError {
   message: string;

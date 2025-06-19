@@ -1,7 +1,9 @@
 import { useState, createContext, type ReactNode } from 'react';
-
 import type ProductDetailsType from '../types/ProductDetailsType';
-import type CartType from '../types/CartType';
+
+interface CartType extends ProductDetailsType {
+  quantity: number;
+}
 
 interface Props {
   children: ReactNode;
