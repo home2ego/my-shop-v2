@@ -1,7 +1,7 @@
 import { useState, type FC, useRef, useLayoutEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { ApiMethod, apiMutate } from '../api/fetcher';
+import { apiMutate } from '../api/fetcher';
 import type User from '../types/User';
 import type LoginData from '../types/LoginData';
 import './Login.css';
@@ -25,7 +25,7 @@ const Login: FC<Props> = ({ onUserLogin }) => {
 
   const mutation = useMutation({
     mutationFn: (data: LoginData) => {
-      return apiMutate<User[], LoginData>(ApiMethod.POST, 'rpc/login', data);
+      return apiMutate<User[], LoginData>('POST', 'rpc/login', data);
     },
 
     onError: () => {
