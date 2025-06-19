@@ -2,6 +2,8 @@ import { useContext, useLayoutEffect, useState, type FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import type User from '../types/User';
+import darkIcon from '../assets/dark.svg'
+import lightIcon from '../assets/light.svg'
 import './Navbar.css';
 
 interface Props {
@@ -36,7 +38,7 @@ const Navbar: FC<Props> = ({ user }) => {
           onClick={() => setLight(!light)}
         >
           <img
-            src={light ? '/light.svg' : '/dark.svg'}
+            src={light ? lightIcon : darkIcon}
             width="24"
             height="24"
             alt={light ? 'Light theme' : 'Dark theme'}
