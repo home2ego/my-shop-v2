@@ -1,22 +1,20 @@
-import { Suspense, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Suspense, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Navbar from '../components/Navbar';
-import Loader from '../components/Loader';
-import Landing from '../pages/Landing';
+import Navbar from "../components/Navbar";
+import Loader from "../components/Loader";
+import Landing from "../pages/Landing";
+import Login from "../pages/Login";
+import Profile from "../pages/Profile";
+import Products from "../pages/Products";
+import ProductDetails from "../pages/ProductDetails";
+import Cart from "../pages/Cart";
 
-import Login from '../pages/Login';
-import Profile from '../pages/Profile';
-import Products from '../pages/Products';
-import ProductDetails from '../pages/ProductDetails';
-import Cart from '../pages/Cart';
-
-import type User from '../types/User';
-import './App.css';
+import type User from "../types/User";
+import "./App.css";
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
-  const location = useLocation();
 
   function handleUserLogin(newUser: User) {
     setUser(newUser);
@@ -49,7 +47,7 @@ const App = () => {
           <Route
             path="/products"
             element={
-              <Suspense fallback={<Loader />} key={location.pathname}>
+              <Suspense fallback={<Loader />} key="products">
                 <Products />
               </Suspense>
             }
@@ -58,7 +56,7 @@ const App = () => {
           <Route
             path="/products/:id"
             element={
-              <Suspense fallback={<Loader />} key={location.pathname}>
+              <Suspense fallback={<Loader />}>
                 <ProductDetails />
               </Suspense>
             }
@@ -66,7 +64,7 @@ const App = () => {
 
           <Route path="/cart" element={<Cart user={user} />} />
 
-          <Route path="*" element={<h1>Page not found</h1>} />
+          <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </div>
     </>

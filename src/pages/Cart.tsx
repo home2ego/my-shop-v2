@@ -1,11 +1,10 @@
-import { useContext, type FC } from 'react';
-import { useImageLoaded } from '../hooks/useImageLoaded';
-import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
-import formatProductName from '../utils/formatProductName';
-import formatPrice from '../utils/formatPrice';
-import type User from '../types/User';
-import './Cart.css';
+import { useContext, type FC } from "react";
+import { useImageLoaded } from "../hooks/useImageLoaded";
+import { Link } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
+import formatProductName from "../utils/formatProductName";
+import type User from "../types/User";
+import "./Cart.css";
 
 interface Props {
   user: User | null;
@@ -24,7 +23,7 @@ const Cart: FC<Props> = ({ user }) => {
           <h1>Your cart</h1>
 
           <p className="cart-empty">
-            Your cart is empty. Add a product from the{' '}
+            Your cart is empty. Add a product from the{" "}
             <Link to="/products">products</Link> page.
           </p>
         </>
@@ -41,14 +40,14 @@ const Cart: FC<Props> = ({ user }) => {
                 width="126"
                 height="84"
                 className={
-                  loaded ? 'avatar image-fade loaded' : 'avatar image-fade'
+                  loaded ? "avatar image-fade loaded" : "avatar image-fade"
                 }
                 onLoad={handleLoad}
               />
 
               <div className="cart__details">
                 <p>
-                  {product.name.includes(' ')
+                  {product.name.includes(" ")
                     ? formatProductName(product.name)
                     : product.name}
                 </p>
@@ -69,8 +68,13 @@ const Cart: FC<Props> = ({ user }) => {
                 </div>
 
                 <div className="cart__price">
-                  <p>{formatPrice(product.final_price)}</p>
-                  <p>{formatPrice(product.final_price * product.quantity)}</p>
+                  <p>${(product.final_price / 100).toFixed(2)}</p>
+                  <p>
+                    $
+                    {((product.final_price * product.quantity) / 100).toFixed(
+                      2
+                    )}
+                  </p>
                 </div>
               </div>
             </div>
@@ -78,7 +82,7 @@ const Cart: FC<Props> = ({ user }) => {
 
           <div className="cart-total">
             <h2>Total:</h2>
-            <p>{formatPrice(cartSum)}</p>
+            <p>${(cartSum / 100).toFixed(2)}</p>
           </div>
 
           <form onSubmit={(event) => event.preventDefault()}>
@@ -90,7 +94,7 @@ const Cart: FC<Props> = ({ user }) => {
               type="email"
               className="input"
               placeholder="Enter your email"
-              defaultValue={user ? user.email : ''}
+              defaultValue={user ? user.email : ""}
             />
 
             <p className="text-dimmed cart-notice">

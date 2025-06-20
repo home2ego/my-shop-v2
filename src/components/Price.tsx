@@ -1,6 +1,5 @@
-import type { FC } from 'react';
-import formatPrice from '../utils/formatPrice';
-import './Price.css';
+import type { FC } from "react";
+import "./Price.css";
 
 interface Props {
   originalPrice: number;
@@ -10,10 +9,9 @@ interface Props {
 const Price: FC<Props> = ({ originalPrice, finalPrice }) => {
   return (
     <>
-      {formatPrice(finalPrice)}
-
+      ${(finalPrice / 100).toFixed(2)}
       {finalPrice !== originalPrice && (
-        <span className="price-old">{formatPrice(originalPrice)}</span>
+        <span className="price-old">${(originalPrice / 100).toFixed(2)}</span>
       )}
     </>
   );

@@ -1,10 +1,10 @@
-import { useContext, useLayoutEffect, useState, type FC } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
-import type User from '../types/User';
-import darkIcon from '../assets/dark.svg'
-import lightIcon from '../assets/light.svg'
-import './Navbar.css';
+import { useContext, useLayoutEffect, useState, type FC } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
+import type User from "../types/User";
+import darkIcon from "../assets/dark.svg";
+import lightIcon from "../assets/light.svg";
+import "./Navbar.css";
 
 interface Props {
   user: User | null;
@@ -12,14 +12,14 @@ interface Props {
 
 const Navbar: FC<Props> = ({ user }) => {
   const [light, setLight] = useState(
-    () => window.matchMedia('(prefers-color-scheme: light)').matches,
+    () => window.matchMedia("(prefers-color-scheme: light)").matches
   );
 
   useLayoutEffect(() => {
     if (!light) {
-      document.body.classList.add('dark');
+      document.body.classList.add("dark");
     } else {
-      document.body.classList.remove('dark');
+      document.body.classList.remove("dark");
     }
   }, [light]);
 
@@ -41,7 +41,7 @@ const Navbar: FC<Props> = ({ user }) => {
             src={light ? lightIcon : darkIcon}
             width="24"
             height="24"
-            alt={light ? 'Light theme' : 'Dark theme'}
+            alt={light ? "Light theme" : "Dark theme"}
           />
         </button>
 
@@ -65,8 +65,8 @@ const Navbar: FC<Props> = ({ user }) => {
           to="/cart"
           className={({ isActive }) =>
             isActive
-              ? 'btn-link btn-link__primary active'
-              : 'btn-link btn-link__primary'
+              ? "btn-link btn-link__primary active"
+              : "btn-link btn-link__primary"
           }
         >
           Cart <span className="btn-link__space">({cartCount})</span>

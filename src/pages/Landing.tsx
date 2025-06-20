@@ -4,6 +4,7 @@ import "./Landing.css";
 const Landing = () => {
   return (
     <>
+      <title>MyShop</title>
       <h1>Online shopping simplified</h1>
       <p className="landing-tagline text-dimmed">
         Order your groceries from MyShop with our easy to use app, and get your
