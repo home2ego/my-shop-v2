@@ -15,6 +15,199 @@
       type="image/svg+xml"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 1.5;
+
+        --dark: #0b192c;
+        --black: #020917;
+
+        --light: #f8f9fa;
+        --white: #fff;
+
+        --border: #e2e6ec;
+
+        --attention: #d71718;
+        --highlight: #fdfdfd;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        margin: 0;
+
+        background-image: linear-gradient(to bottom, #f8f9fa, #e2e6ec);
+        color: var(--black);
+
+        min-height: 100vh;
+      }
+      body.dark {
+        --attention: #ff4652;
+        --highlight: #0b192c;
+
+        background-image: linear-gradient(to bottom, #020917, #101725);
+        color: var(--light);
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--dark);
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 1.9rem;
+      }
+
+      .nav-wrapper {
+        background-color: var(--white);
+        box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+          0px -3px 7px 1px rgba(0, 0, 0, 0.07);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-inline: 16px;
+      }
+
+      .logo {
+        font-size: 2.6rem;
+        font-weight: bold;
+      }
+
+      .theme-switcher {
+        all: unset;
+        box-sizing: border-box;
+        outline: revert;
+        cursor: pointer;
+        display: inline-flex;
+
+        border-radius: 50%;
+        background-color: var(--light);
+        border: 1px solid var(--border);
+        padding: 9px;
+      }
+
+      .btn-link {
+        font-weight: bold;
+        white-space: nowrap;
+        cursor: pointer;
+        background-color: var(--dark);
+        color: var(--white);
+        min-width: 5rem;
+
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+      }
+      .btn-link__secondary {
+        width: fit-content;
+        background-color: #abc4ff;
+        color: var(--black);
+      }
+      .btn-link__space {
+        display: inline-block;
+        text-align: center;
+        min-width: 45px;
+      }
+
+      .text-dimmed {
+        opacity: 0.85;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 12px;
+      }
+
+      .nav__content {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .nav__list {
+        display: flex;
+        background-color: var(--light);
+        border-radius: 24px;
+      }
+      .nav__list li:nth-child(2) {
+        min-width: 5rem;
+        text-align: center;
+      }
+      .nav__list a {
+        padding: 8px 12px;
+      }
+      .nav__list a::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2.5px;
+        background-color: var(--dark);
+
+        transform: scaleX(0);
+      }
+      .nav__list a.active::after {
+        transform: scaleX(1);
+      }
+
+      .landing-tagline {
+        max-width: 30rem;
+      }
+
+      .landing-wrapper {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        align-items: start;
+      }
+      .landing-wrapper a {
+        margin-top: 24px;
+      }
+      .landing-wrapper img {
+        justify-self: end;
+
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 43rem) {
+        .nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+
+      @media (max-width: 30rem) {
+        .nav {
+          padding-block: 24px;
+        }
+        .nav__content {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .landing-wrapper {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
