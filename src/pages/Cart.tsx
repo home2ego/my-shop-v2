@@ -5,6 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 import formatProductName from "../utils/formatProductName";
 import type User from "../types/User";
 import "./Cart.css";
+import formatPrice from "../utils/formatPrice";
 
 interface Props {
   user: User | null;
@@ -68,13 +69,8 @@ const Cart: FC<Props> = ({ user }) => {
                 </div>
 
                 <div className="cart__price">
-                  <p>${(product.final_price / 100).toFixed(2)}</p>
-                  <p>
-                    $
-                    {((product.final_price * product.quantity) / 100).toFixed(
-                      2
-                    )}
-                  </p>
+                  <p>${formatPrice(product.final_price)}</p>
+                  <p>${formatPrice(product.final_price * product.quantity)}</p>
                 </div>
               </div>
             </div>
@@ -82,7 +78,7 @@ const Cart: FC<Props> = ({ user }) => {
 
           <div className="cart-total">
             <h2>Total:</h2>
-            <p>${(cartSum / 100).toFixed(2)}</p>
+            <p>${formatPrice(cartSum)}</p>
           </div>
 
           <form onSubmit={(event) => event.preventDefault()}>
