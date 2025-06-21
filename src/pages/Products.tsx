@@ -1,20 +1,25 @@
-import { useState } from 'react';
-import { useSuspenseQuery } from '@tanstack/react-query';
-import { apiGet } from '../api/fetcher';
-import Product from '../components/Product';
-import type ProductType from '../types/ProductType';
-import './Products.css';
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { apiGet } from "../api/fetcher";
+import Loader from "../components/Loader";
+import Product from "../components/Product";
+import type ProductType from "../types/ProductType";
+import "./Products.css";
 
 const Products = () => {
-  const { data: products } = useSuspenseQuery({
-    queryKey: ['products-list'],
-    queryFn: () => apiGet<ProductType[]>('products-list'),
+  const { data = [], isLoading } = useQuery({
+    queryKey: ["products-list"],
+    queryFn: () => apiGet<ProductType[]>("products-list"),
   });
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
-  const filteredProducts = products.filter((product: ProductType) =>
-    product.name.toLowerCase().includes(query),
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  const filteredProducts = data.filter((product: ProductType) =>
+    product.name.toLowerCase().includes(query)
   );
 
   return (
@@ -43,7 +48,7 @@ const Products = () => {
             <button
               className="btn-link btn-link__secondary"
               type="button"
-              onClick={() => setQuery('')}
+              onClick={() => setQuery("")}
             >
               Reset search
             </button>

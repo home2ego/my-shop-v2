@@ -69,8 +69,8 @@ strong {
 
 .nav-wrapper {
   background-color: var(--white);
-  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07), 0px -3px 7px 1px
-    rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+    0px -3px 7px 1px rgba(0, 0, 0, 0.07);
 }
 
 .content-wrapper {

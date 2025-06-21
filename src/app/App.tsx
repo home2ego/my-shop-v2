@@ -1,8 +1,7 @@
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
-import Loader from "../components/Loader";
 import Landing from "../pages/Landing";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
@@ -38,30 +37,12 @@ const App = () => {
             path="/login"
             element={<Login onUserLogin={handleUserLogin} />}
           />
-
           <Route
             path="/profile"
             element={<Profile user={user} onUserLogout={handleUserLogout} />}
           />
-
-          <Route
-            path="/products"
-            element={
-              <Suspense fallback={<Loader />} key="products">
-                <Products />
-              </Suspense>
-            }
-          />
-
-          <Route
-            path="/products/:id"
-            element={
-              <Suspense fallback={<Loader />}>
-                <ProductDetails />
-              </Suspense>
-            }
-          />
-
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart user={user} />} />
 
           <Route path="*" element={<div>Page not found</div>} />
