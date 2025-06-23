@@ -1,6 +1,5 @@
 # Local
 .DS_Store
-Icon?
 *.local
 *.log*
 
@@ -9,13 +8,9 @@ dist/
 
 # Node
 node_modules
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-# Vite
-.vite/
-.cache/
+# Profile
+.rspack-profile-*/
 
 # Env files
 .env
@@ -24,10 +19,4 @@ pnpm-lock.yaml
 # IDE
 .vscode/*
 !.vscode/extensions.json
-.idea/
-
-# Testing
-coverage/
-
-# TypeScript
-*.tsbuildinfo
+.idea
