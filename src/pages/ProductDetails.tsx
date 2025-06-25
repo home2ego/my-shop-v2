@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import { useImageLoaded } from "../hooks/useImageLoaded";
-import { Link, useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { CartContext } from "../contexts/CartContext";
-import { apiGet } from "../api/fetcher";
-import Loader from "../components/Loader";
-import Price from "../components/Price";
-import type ProductDetailsType from "../types/ProductDetailsType";
-import "./ProductDetails.css";
+import { useContext } from 'react';
+import { useImageLoaded } from '../hooks/useImageLoaded';
+import { Link, useParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { CartContext } from '../contexts/CartContext';
+import { apiGet } from '../api/fetcher';
+import Loader from '../components/Loader';
+import Price from '../components/Price';
+import type ProductDetailsType from '../types/ProductDetailsType';
+import './ProductDetails.css';
 
 const ProductDetails = () => {
   const { loaded, handleLoad } = useImageLoaded();
@@ -15,7 +15,7 @@ const ProductDetails = () => {
   const { onAddProduct } = useContext(CartContext);
 
   const { data = [], isLoading } = useQuery({
-    queryKey: ["products/details", id],
+    queryKey: ['products/details', id],
     queryFn: () => apiGet<ProductDetailsType[]>(`products?id=eq.${id}`),
   });
 
@@ -41,7 +41,7 @@ const ProductDetails = () => {
             width="200"
             height="220"
             className={
-              loaded ? "avatar image-fade loaded" : "avatar image-fade"
+              loaded ? 'avatar image-fade loaded' : 'avatar image-fade'
             }
             onLoad={handleLoad}
           />

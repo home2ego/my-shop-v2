@@ -1,6 +1,6 @@
-import type { FC } from "react";
-import formatPrice from "../utils/formatPrice";
-import "./Price.css";
+import type { FC } from 'react';
+import formatPrice from '../utils/formatPrice';
+import './Price.css';
 
 interface Props {
   originalPrice: number;

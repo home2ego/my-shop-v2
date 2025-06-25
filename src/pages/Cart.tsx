@@ -1,11 +1,11 @@
-import { useContext, type FC } from "react";
-import { useImageLoaded } from "../hooks/useImageLoaded";
-import { Link } from "react-router-dom";
-import { CartContext } from "../contexts/CartContext";
-import formatProductName from "../utils/formatProductName";
-import type User from "../types/User";
-import "./Cart.css";
-import formatPrice from "../utils/formatPrice";
+import { useContext, type FC } from 'react';
+import { useImageLoaded } from '../hooks/useImageLoaded';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
+import formatProductName from '../utils/formatProductName';
+import type User from '../types/User';
+import './Cart.css';
+import formatPrice from '../utils/formatPrice';
 
 interface Props {
   user: User | null;
@@ -24,7 +24,7 @@ const Cart: FC<Props> = ({ user }) => {
           <h1>Your cart</h1>
 
           <p className="cart-empty">
-            Your cart is empty. Add a product from the{" "}
+            Your cart is empty. Add a product from the{' '}
             <Link to="/products">products</Link> page.
           </p>
         </>
@@ -41,14 +41,14 @@ const Cart: FC<Props> = ({ user }) => {
                 width="126"
                 height="84"
                 className={
-                  loaded ? "avatar image-fade loaded" : "avatar image-fade"
+                  loaded ? 'avatar image-fade loaded' : 'avatar image-fade'
                 }
                 onLoad={handleLoad}
               />
 
               <div className="cart__details">
                 <p>
-                  {product.name.includes(" ")
+                  {product.name.includes(' ')
                     ? formatProductName(product.name)
                     : product.name}
                 </p>
@@ -90,7 +90,7 @@ const Cart: FC<Props> = ({ user }) => {
               type="email"
               className="input"
               placeholder="Enter your email"
-              defaultValue={user ? user.email : ""}
+              defaultValue={user ? user.email : ''}
             />
 
             <p className="text-dimmed cart-notice">

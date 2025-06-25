@@ -30,7 +30,9 @@ strong {
 }
 
 .btn-link {
-  transition: transform 180ms, opacity 180ms;
+  transition:
+    transform 180ms,
+    opacity 180ms;
 }
 .btn-link__primary:hover {
   transform: scale(1.025);

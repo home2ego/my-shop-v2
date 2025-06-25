@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Navbar from "../components/Navbar";
-import Landing from "../pages/Landing";
-import Login from "../pages/Login";
-import Profile from "../pages/Profile";
-import Products from "../pages/Products";
-import ProductDetails from "../pages/ProductDetails";
-import Cart from "../pages/Cart";
+import Navbar from '../components/Navbar';
+import Landing from '../pages/Landing';
+import Login from '../pages/Login';
+import Profile from '../pages/Profile';
+import Products from '../pages/Products';
+import ProductDetails from '../pages/ProductDetails';
+import Cart from '../pages/Cart';
 
-import type User from "../types/User";
-import "./App.css";
+import type User from '../types/User';
+import './App.css';
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
