@@ -20,6 +20,7 @@ const Landing = () => {
           height="400"
           src="/landing.svg"
           alt="Shopping cart display with purchases"
+          fetchPriority="high"
         />
       </div>
     </>
