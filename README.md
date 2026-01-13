@@ -25,11 +25,11 @@ Experience the website live at: https://my-shop-web.pages.dev/
 
 ## ✨ Features
 
-**User Login**: Log in using a provided test account.
-**Search**: Find products quickly using the search field.
-**Product Browsing**: Browse a list of available groceries.
-**Shopping Cart**: Add items to the cart and view product details by clicking on them.
-**Checkout**: Review cart contents and complete the order for delivery.
+- **User Login**: Log in using a provided test account.
+- **Search**: Find products quickly using the search field.
+- **Product Browsing**: Browse a list of available groceries.
+- **Shopping Cart**: Add items to the cart and view product details by clicking on them.
+- **Checkout**: Review cart contents and complete the order for delivery.
 
 ## 🚦 Running the Project
 
