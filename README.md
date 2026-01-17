@@ -1,10 +1,10 @@
 # MyShop
 
-A lightweight shopping platform designed to simplify the process of ordering groceries. With an easy-to-use interface, users can browse products, add items to their cart, and arrange for doorstep delivery.
+A lightweight shopping app designed to simplify the process of ordering groceries. With an easy-to-use interface, users can browse products, add items to their cart, and arrange for doorstep delivery.
 
 ## 🚀 Live Demo
 
-Experience the website live at: https://my-shop-web.pages.dev/
+Try it here: https://my-shop-web.pages.dev/
 
 ## 📦 Technologies
 
