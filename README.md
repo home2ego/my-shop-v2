@@ -1,6 +1,6 @@
 # MyShop
 
-A lightweight shopping app designed to simplify the process of ordering groceries. With an easy-to-use interface, users can browse products, add items to their cart, and arrange for doorstep delivery.
+A basic grocery store project. This is a simple React application used to test out a standard shopping flow.
 
 ## 🚀 Live Demo
 
@@ -25,11 +25,11 @@ Try it here: https://my-shop-web.pages.dev/
 
 ## ✨ Features
 
-- **User Login**: Log in using a provided test account.
-- **Search**: Find products quickly using the search field.
-- **Product Browsing**: Browse a list of available groceries.
-- **Shopping Cart**: Add items to the cart and view product details by clicking on them.
-- **Checkout**: Review cart contents and complete the order for delivery.
+- **Login**: Use a test account to enter the app.
+- **Search**: Filter the product list by name.
+- **Browsing**: View a list of grocery items.
+- **Cart**: Add or remove items from a shopping list.
+- **Checkout**: A summary page to review items before "ordering".
 
 ## 🚦 Running the Project
 
