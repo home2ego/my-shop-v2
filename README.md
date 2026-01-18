@@ -1,40 +1,41 @@
 # MyShop
 
-A basic grocery store project. This is a simple React application used to test out a standard shopping flow.
+A React + TypeScript grocery application that implements the basics of shopping: login, browsing products, search, and cart management.
 
-## 🚀 Live Demo
+## [Live Demo](https://my-shop-web.pages.dev/)
 
-Try it here: https://my-shop-web.pages.dev/
-
-## 📦 Technologies
+## 🛠️ Technical Stack
 
 ### Core
 - `React` — UI framework
 - `TypeScript` — Type safety
 - `CSS` — Styling
-- `TanStack Query` — Server state management
+- `TanStack Query` — Data fetching and caching
 
-### UI/UX
+### UI/UX & Development
 - `React Router` — Client-side routing
-- `React Error Boundary` — Render-time error handling
-
-### Development & Deployment
+- `React Error Boundary` — Error handling
 - `Vite` — Build tool
-- `ESLint & Prettier` — Code quality and formatting
-- `Cloudflare` — Hosting and deployment
+- `ESLint` — Linting
 
-## ✨ Features
+## ✨ Key Features
 
-- **Login**: Use a test account to enter the app.
-- **Search**: Filter the product list by name.
-- **Browsing**: View a list of grocery items.
-- **Cart**: Add or remove items from a shopping list.
-- **Checkout**: A summary page to review items before "ordering".
+- Simulated authentication with test credentials
+- Product browsing with images, names, and prices
+- Instant search filtering by product name
+- Cart management: add/remove items, adjust quantities, view totals
 
-## 🚦 Running the Project
+## 🚦 How to Run
 
 ```bash
+# Clone the repository
 git clone https://github.com/home2ego/my-shop-v2.git
+
+# Navigate to directory
 cd my-shop-v2
-npm install    # or pnpm install / yarn install
-npm run dev    # or pnpm dev / yarn dev
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
