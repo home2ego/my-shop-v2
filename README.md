@@ -18,7 +18,7 @@ A React + TypeScript grocery application that implements the basics of shopping:
 - `Vite` — Build tool
 - `ESLint` — Linting
 
-## ✨ Key Features
+## 💡 Key Features
 
 - Simulated authentication with test credentials
 - Product browsing with images, names, and prices
